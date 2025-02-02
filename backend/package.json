@@ -1,0 +1,27 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "a book store app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BLACK-PANTHER3314/Bookshop.git"
+  },
+  "author": "Abdullah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BLACK-PANTHER3314/Bookshop/issues"
+  },
+  "homepage": "https://github.com/BLACK-PANTHER3314/Bookshop#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongoose": "^8.6.3",
+    "nodemon": "^3.1.7"
+  }
+}

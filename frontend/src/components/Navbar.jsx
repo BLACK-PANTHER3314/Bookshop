@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Login from "./Login";
+import { useAuth } from "../context/AuthProvider";
+import Logout from "./Logout";
 
 function Navbar() {
   const [sticky, setSticky] = useState(false);
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
+  const { authUser, setAuthUser } = useAuth();
 
   //for sticky nav-bar
   useEffect(() => {
@@ -133,22 +136,24 @@ function Navbar() {
               </svg>
             </label>
 
-            <div>
-              <a
-                className="bg-black text-white px-2 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
-                onClick={() =>
-                  document.getElementById("my_modal_2").showModal()
-                }
-              >
-                Login
-              </a>
-      <Login></Login>
-
-            </div>
+            {authUser ? (
+              <Logout />
+            ) : (
+              <div>
+                <a
+                  className="bg-black text-white px-2 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
+                  onClick={() =>
+                    document.getElementById("my_modal_2").showModal()
+                  }
+                >
+                  Login
+                </a>
+                <Login></Login>
+              </div>
+            )}
           </div>
         </div>
       </div>
-
     </>
   );
 }
